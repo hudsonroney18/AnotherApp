@@ -32,7 +32,6 @@ function Band ({name, members, formed} : {name: string; members: string; formed:
 
   return (
     <>
-      <img />
       <h2>Name: {name} </h2>
       <h2>Original Members: {members} </h2>
       <h2>Formed: {formed} </h2>
