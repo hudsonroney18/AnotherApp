@@ -52,13 +52,26 @@ import './App.css';
 //   );
 // }
 
-function App() {
+import { useState, useEffect } from 'react';
+import './App.css';
+import teamsData from './CollegeBasketballTeams.json'; // Import JSON
+import { Team } from './types'; // Import TypeScript types
+import Heading from './components/Heading.tsx';
+import TeamList from './components/TeamList.tsx';
 
+const App: React.FC = () => {
+  const [teams, setTeams] = useState<Team[]>([]);
+
+  useEffect(() => {
+    setTeams(teamsData.teams); // Load teams from JSON
+  }, []);
 
   return (
-    <>
-    </>
+    <div>
+      <Heading />
+      <TeamList teams={teams} />
+    </div>
   );
-}
+};
 
 export default App;
